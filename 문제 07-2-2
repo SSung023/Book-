@@ -1,0 +1,51 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+class Book{
+private:
+    char *title;
+    char *isbn; //국제 표준 도서 번호
+    int price;
+
+public:
+    Book(char *t, char *i, int p): title(t), isbn(i), price(p){
+
+    }
+    void showBookInfo(){
+        cout << "제목: " << title << endl;
+        cout << "ISBN: " << isbn << endl;
+        cout << "가격: " << price << endl;
+    }
+};
+
+class EBook : public Book{
+private:
+    char *DRMKey; //보안 관련 키
+
+public:
+    EBook(char* t, char* i, int p, char* k): Book(t, i, p), DRMKey(k){
+
+    }
+    void showEBookInfo(){
+        showBookInfo();
+        cout << "인증키: " << DRMKey;
+    }
+};
+
+
+int main() {
+
+    Book book("좋은 C++", "555-123-45346", 20000);
+    book.showBookInfo();
+
+    cout<< endl;
+
+    EBook eBook("좋은 C++ Ebook", "234-245-34634", 10000, "dgjsk34ksd");
+    eBook.showEBookInfo();
+
+
+
+    return 0;
+}
