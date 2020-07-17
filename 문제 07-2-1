@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+class Rectangle{
+
+private:
+    int width, height;
+
+public:
+    Rectangle(int w, int h) : width(w), height(h){
+
+    }
+    void showAreaInfo(){
+        cout << "면적: " << width*height << endl;
+    }
+
+};
+
+class Square : public Rectangle{
+
+private:
+    int length;
+
+public:
+    Square(int l) : Rectangle(l, l){
+
+    }
+};
+
+
+int main() {
+
+    Rectangle rec(4,3);
+    rec.showAreaInfo();
+
+    Square sqr(7);
+    sqr.showAreaInfo();
+    
+
+    return 0;
+}
