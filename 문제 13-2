@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+template<class T>
+T sumArray(T arr[], int len){
+    T sum = 0;
+    for(int i=0; i<len; i++){
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+int main() {
+
+    int arr[] = {1,2,3};
+    double arr2[] = {0.1, 0.2, 0.3};
+
+    cout << sumArray(arr, 3) << endl;
+    cout << sumArray(arr2, 3);
+
+    return 0;
+}
