@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+
+int main() {
+
+    vector<int> v;
+
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+    v.push_back(40);
+    v.push_back(50);
+
+    vector<int>::iterator iter;
+
+    sort(v.begin(), v.end()); //컴파일 에러나지 않음
+
+    return 0;
+}
