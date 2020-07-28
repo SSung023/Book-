@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+
+int main() {
+
+    vector<int> v;
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+    v.push_back(40);
+    v.push_back(50);
+
+    vector<int>::iterator iter = v.begin() + 2; //원소 30을 가리킴
+    v.insert(iter, 100); //iter가 가리키는 곳에 원소(100)을 추가함
+    for(iter = v.begin(); iter != v.end(); iter++){
+        cout << *iter << " ";
+    }
+    cout << endl;
+
+
+    iter = v.begin() + 2; //원소 100을 가리킴
+    v.erase(iter); //iter가 가리키는 원소를 삭제
+    for(iter = v.begin(); iter != v.end(); iter++){
+        cout << *iter << " ";
+    }
+
+
+    return 0;
+}
