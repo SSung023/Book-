@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <deque>
+#include <list>
+#include <algorithm>
+
+using namespace std;
+
+
+int main() {
+
+    list<int> lt;
+
+    lt.push_back(10);
+    lt.push_back(20);
+    lt.push_back(30);
+    lt.push_back(10);
+    lt.push_back(40);
+    lt.push_back(10);
+    lt.push_back(10);
+    lt.push_back(50);
+
+    list<int>::iterator iter = lt.begin();
+
+    for(iter = lt.begin(); iter != lt.end(); ++iter){ //원소 순차 출력
+        cout << *iter << " ";
+    }
+    cout << endl;
+
+    lt.remove(10); //list에 있는 10의 원소를 가진 노드를 모두 제거
+
+    for(iter = lt.begin(); iter != lt.end(); ++iter){ //원소 순차 출력
+        cout << *iter << " ";
+    }
+
+
+
+
+    return 0;
+}
