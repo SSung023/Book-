@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <deque>
+#include <list>
+#include <algorithm>
+
+using namespace std;
+
+
+int main() {
+
+    list<int> lt;
+
+    lt.push_back(10);
+    lt.push_back(20);
+    lt.push_back(30);
+    lt.push_back(40);
+    lt.push_back(50);
+
+    list<int>::iterator iter = lt.begin();
+    list<int>::iterator iter2;
+    ++iter;
+    ++iter;
+
+    iter2 = lt.erase(iter); //원소 30을 제거, iter2는 다음 원소를 가리키는 반복자(40을 가리킴)
+
+    for(iter = lt.begin(); iter != lt.end(); ++iter){ //원소 순차 출력
+        cout << *iter << " ";
+    }
+    cout << endl;
+
+    cout << "iter2: " << *iter2 << endl; //40
+
+    iter = iter2;
+    iter2 = lt.insert(iter, 300); //iter가 가리키는 위치에 300을 추가 (40 앞에 들어감)
+    for(iter = lt.begin(); iter != lt.end(); iter++){
+        cout << *iter << " ";
+    }
+    cout << endl;
+
+    cout << "iter2: " << *iter2 << endl;
+
+
+
+    return 0;
+}
