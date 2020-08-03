@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+#include <set>
+#include <algorithm>
+
+#include <stdio.h>
+
+using namespace std;
+
+
+int main() {
+
+    multiset<int> ms;
+    //multiset의 경우 key들의 중복을 허용
+    ms.insert(50);
+    ms.insert(30);
+    ms.insert(80);
+    ms.insert(30); //중복
+    ms.insert(70);
+    ms.insert(10);
+    ms.insert(80); //중복
+
+    multiset<int>::iterator iter;
+    for(iter = ms.begin(); iter != ms.end(); iter++){
+        cout << *iter << " ";
+    }
+    cout << endl;
+
+
+    cout << "find() 예제: 원소 30의 갯수 -> "  << ms.count(30) << endl;
+
+    //lower_bound와 upper_bound를 이용하여 중복된 key 찾기
+    multiset<int>::iterator lower_iter;
+    multiset<int>::iterator upper_iter;
+
+    lower_iter = ms.lower_bound(30);
+    upper_iter = ms.upper_bound(30);
+    cout << "lower_iter: " << *lower_iter << ", upper_iter: " << *upper_iter << endl;
+
+    //pair 객체 & equal_range를 이용하여 중복된 원소 출력하기
+    pair<multiset<int>::iterator , multiset<int>::iterator> iter_pair;
+    iter_pair = ms.equal_range(30);
+
+    for(iter = iter_pair.first; iter != iter_pair.second; iter++){
+        cout << *iter << " ";
+    }
+
+    return 0;
+}
