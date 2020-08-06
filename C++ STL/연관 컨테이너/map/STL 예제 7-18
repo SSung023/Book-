@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <algorithm>
+#include <stdio.h>
+
+using namespace std;
+
+
+
+int main() {
+
+    map<int, int, greater<int>> m; //map의 경우 <key, value> pair 객체로 이루어져 있음 && key는 유일해야 함
+    //greater<int>: 정렬 기준을 greater(내림차순)으로 설정
+
+    m[5] = 100;
+    m[3] = 100;
+    m[8] = 30;
+    m[4] = 40;
+    m[1] = 70;
+    m[7] = 100;
+    m[9] = 50;
+
+    map<int, int>::iterator iter;
+    for(iter = m.begin(); iter != m.end(); iter++){
+        cout << "(" << iter->first << "," << iter->second << ")" << " ";
+    }
+    cout << endl;
+
+
+    //find() 멤버 함수의 예제
+    iter = m.find(5); // key 5를 찾는 함수
+    if(iter != m.end())
+        cout << "key 5에 매핑된 value : " << iter->second << endl;
+
+
+    //lower_bound, upper_bound 예제
+    map<int, int>::iterator lower_iter = m.lower_bound(5);
+    map<int, int>::iterator upper_iter = m.upper_bound(5);
+    cout << "구간 lower_iter, upper_iter의 순차열 : ";
+    for(iter = lower_iter; iter != upper_iter; iter++){
+        cout << "(" << iter->first << "," << iter->second << ")" << " ";
+    }
+    cout << endl;
+
+
+    //equal_range() 예제
+    pair<map<int, int>::iterator, map<int, int>::iterator> iter_pair;
+    iter_pair = m.equal_range(5);
+    cout << "구간 iter_pair.first, iter_pair.second의 순차열: ";
+    for(iter = iter_pair.first; iter != iter_pair.second; iter++){
+        cout << "(" << iter->first << "," << iter->second << ")" << " ";
+    }
+    cout << endl;
+
+
+    return 0;
+}
