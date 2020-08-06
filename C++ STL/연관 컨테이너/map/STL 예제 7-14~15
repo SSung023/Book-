@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <algorithm>
+#include <stdio.h>
+
+using namespace std;
+
+
+
+int main() {
+
+    map<int, int> m; //map의 경우 <key, value> pair 객체로 이루어져 있음 && key는 유일해야 함
+    pair<map<int, int>::iterator, bool> pr; // <iter, bool> pair 객체 생성
+
+    //map은 삽입 시, key 값을 기준으로 내림차순으로 정렬!
+    m.insert(pair<int, int>(5,100));
+    m.insert(pair<int, int>(3,100));
+    m.insert(pair<int, int>(8,30));
+    m.insert(pair<int, int>(4,40));
+    m.insert(pair<int, int>(1,70));
+    m.insert(pair<int, int>(7,100));
+
+    //성공
+    pr = m.insert(pair<int, int>(9, 50));
+    if(pr.second){
+        cout << "key: " << pr.first->first << ", value: "<< pr.first->second << " 저장 완료!" << endl;
+    } else
+        cout << "key가 이미 존재합니다" << endl;
+
+    //실패
+    pr = m.insert(pair<int, int>(9, 50));
+    if(pr.second){
+        cout << "key: " << pr.first->first << ", value: "<< pr.first->second << "저장 완료!" << endl;
+    } else
+        cout << "key가 이미 존재합니다" << endl;
+
+
+    return 0;
+}
