@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <algorithm>
+#include <stdio.h>
+
+using namespace std;
+
+
+
+int main() {
+
+    map<int, int, greater<int>> m; //map의 경우 <key, value> pair 객체로 이루어져 있음 && key는 유일해야 함
+    //greater<int>: 정렬 기준을 greater(내림차순)으로 설정
+
+    m[5] = 100;
+    m[3] = 100;
+    m[8] = 30;
+    m[4] = 40;
+    m[1] = 70;
+    m[7] = 100;
+    m[9] = 50;
+
+    map<int, int>::iterator iter;
+    for(iter = m.begin(); iter != m.end(); iter++){
+        cout << "(" << iter->first << "," << iter->second << ")" << " ";
+    }
+    cout << endl;
+
+    m[5] = 200; //key 5의 valur를 200으로 수정
+    for(iter = m.begin(); iter != m.end(); iter++){
+        cout << "(" << iter->first << "," << iter->second << ")" << " ";
+    }
+    cout << endl;
+
+
+    return 0;
+}
