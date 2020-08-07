@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <stdio.h>
+#include <vector>
+#include <queue>
+#include <list>
+
+using namespace std;
+
+int main() {
+
+    queue<int, list<int>> q; //컨테이너를 list로 설정
+    //queue<int> q; 또한 가능
+
+    q.push(10);
+    q.push(20);
+    q.push(30);
+
+    while(!q.empty()){
+        cout << q.front() << endl;
+        q.pop();
+    }
+
+
+    return 0;
+}
