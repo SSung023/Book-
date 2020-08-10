@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <stdio.h>
+#include <vector>
+#include <queue>
+#include <list>
+
+using namespace std;
+
+int main() {
+
+    //기본 컨테이너를 deque로 설정, 정렬 기준을 올림차순으로 변경
+    priority_queue<int, deque<int>, greater<int>> pq;
+    pq.push(40);
+    pq.push(20);
+    pq.push(30);
+    pq.push(50);
+    pq.push(10);
+
+    cout << "priority_queue[greater]" << endl;
+    while(!pq.empty()){
+        cout << pq.top() << " ";
+        pq.pop();
+    }
+
+
+
+    return 0;
+}
