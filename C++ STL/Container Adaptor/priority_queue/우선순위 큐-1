@@ -24,20 +24,7 @@ int main() {
         pq1.pop();
     }
     cout << endl << "=============" << endl;
-    //기본 컨테이너를 deque로 설정, 정렬 기준을 올림차순으로 변경
-    priority_queue<int, deque<int>, greater<int>> pq2;
-    pq2.push(40);
-    pq2.push(20);
-    pq2.push(30);
-    pq2.push(50);
-    pq2.push(10);
-
-    cout << "priority_queue[greater]" << endl;
-    while(!pq2.empty()){
-        cout << pq2.top() << " ";
-        pq2.pop();
-    }
-
+    
 
 
     return 0;
