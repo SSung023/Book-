@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <stdio.h>
+#include <vector>
+
+
+using namespace std;
+
+int main() {
+
+
+    //string의 push_back() 연습
+
+    string s1("He");
+    string t("llo");
+
+    string::iterator iter;
+
+    for(iter = t.begin(); iter != t.end(); iter++){
+        // push_back하면 s1에 문자를 뒤에 덧붙인다
+        s1.push_back(*iter);
+    }
+
+    cout << s1;
+
+
+    return 0;
+}
