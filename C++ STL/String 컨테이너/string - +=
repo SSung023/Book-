@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <stdio.h>
+#include <vector>
+
+
+using namespace std;
+
+int main() {
+
+
+    //string의 += 연산자 연습
+
+    string s1("He");
+
+    const char* p1 = "Llo!";
+
+    s1 += p1;
+
+    cout << s1;
+
+
+
+    return 0;
+}
