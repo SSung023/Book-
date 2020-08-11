@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <stdio.h>
+#include <vector>
+
+
+using namespace std;
+
+int main() {
+
+
+    //string의 append() 함수 연습
+
+    string s1("He");
+    string s2("He");
+    string s3("He");
+    string s4("He");
+
+    string t("llo");
+
+    s1.append(t); //s1에 t를 뒤에 덧붙임
+    s2.append(t, 0, 3); //t에서 0번째부터 2개를 끊어와서 뒤에 덧붙임
+    s3.append("llo", 2); // 문자열에서 2개를 끊어와서 뒤에 덧붙임
+    s4.append(3, 'l'); // 문자 하나를 count의 갯수만큼 뒤에 붙임
+
+
+    cout << s1 << endl;
+    cout << s2 << endl;
+    cout << s3 << endl;
+    cout << s4 << endl;
+
+    return 0;
+}
