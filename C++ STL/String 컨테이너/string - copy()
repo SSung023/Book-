@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <stdio.h>
+#include <vector>
+
+
+using namespace std;
+
+int main() {
+
+    //string의 copy() 연습 예제
+
+    string s1("hello");
+    char s2[100] = {'\0',}, s3[100] = {'\0',};
+
+    // 전체 문자열 복사
+    s1.copy(s2, s1.length());
+    cout << s2 << endl;
+
+    // 문자열 부분 복사
+    s1.copy(s3, 3, 2); //2번 index에서 3개의 문자를 끌어옴
+    cout << s3;
+
+    return 0;
+}
