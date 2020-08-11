@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <stdio.h>
+#include <vector>
+
+
+using namespace std;
+
+int main() {
+
+
+    //string의 push_back() 연습
+
+    string s1("apple");
+    string s2("banana");
+
+    string s3("test");
+    string s4("test");
+
+    //s2 - s1 = 음수
+    cout << "<s1.compare(s2)>" << endl << "s1이 s2보다 사전적으로 더 앞에 위치: " << s1.compare(s2) << endl;
+    cout << endl;
+    cout << "<s3.compare(s4)>" << endl << "s3과 s4는 동일: " << s3.compare(s4) << endl;
+
+
+    return 0;
+}
